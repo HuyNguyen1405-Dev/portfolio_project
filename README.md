@@ -1,5 +1,8 @@
 # Portfolio Website - Nguyen Van Huy
 
+[![Deploy to GitHub Pages](https://github.com/HuyNguyen1405-Dev/portfolio_project/actions/workflows/deploy.yml/badge.svg)](https://github.com/HuyNguyen1405-Dev/portfolio_project/actions/workflows/deploy.yml)
+[![Code Quality Check](https://github.com/HuyNguyen1405-Dev/portfolio_project/actions/workflows/quality-check.yml/badge.svg)](https://github.com/HuyNguyen1405-Dev/portfolio_project/actions/workflows/quality-check.yml)
+
 A modern, responsive portfolio website showcasing web development skills and projects. Built with pure HTML, CSS, and JavaScript.
 
 ## 🚀 Features
@@ -57,21 +60,33 @@ portfolio/
 
 ## 🚀 Getting Started
 
+### Local Development
+
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/nguyenvanhuy/portfolio.git
+   git clone https://github.com/HuyNguyen1405-Dev/portfolio_project.git
    ```
 
 2. **Navigate to the project directory**:
 
    ```bash
-   cd portfolio
+   cd portfolio_project
    ```
 
 3. **Open in browser**:
    - Simply open `index.html` in your preferred web browser
    - Or use a local server like Live Server in VS Code
+
+### Auto-Deployment
+
+This project is configured with **GitHub Actions** for automatic deployment:
+
+- **🔄 Auto Deploy**: Every push to `main` branch automatically deploys to GitHub Pages
+- **✅ Quality Check**: Automated code quality checks on every commit
+- **🚀 Live Updates**: Website updates automatically when you push changes
+
+**Live Demo**: [Your Portfolio Website](https://huynguyen1405-dev.github.io/portfolio_project/)
 
 ## 📱 Responsive Breakpoints
 

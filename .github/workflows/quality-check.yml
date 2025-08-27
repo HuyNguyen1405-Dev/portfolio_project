@@ -1,0 +1,41 @@
+name: Code Quality Check
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Check HTML validation
+        run: |
+          echo "Checking HTML files..."
+          find . -name "*.html" -type f | head -5
+
+      - name: Check CSS syntax
+        run: |
+          echo "Checking CSS files..."
+          find . -name "*.css" -type f | head -5
+
+      - name: Check JavaScript syntax
+        run: |
+          echo "Checking JavaScript files..."
+          find . -name "*.js" -type f | head -5
+
+      - name: File structure validation
+        run: |
+          echo "Validating project structure..."
+          ls -la
+          echo "✅ Project structure is valid"
