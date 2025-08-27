@@ -1,0 +1,242 @@
+/* Additional Animations and Effects */
+
+/* Enhanced Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-black-900), var(--bg-black-100));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+.preloader .loader {
+  text-align: center;
+  color: var(--skin-color);
+}
+
+.loader-logo {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    var(--skin-color),
+    var(--skin-color-2, #ff6b6b)
+  );
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 32px;
+  color: #fff;
+  animation: logoSpin 2s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.loader-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-black-900);
+  animation: textPulse 1.5s ease-in-out infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes logoSpin {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.1);
+  }
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
+
+/* Enhanced scroll animations */
+.scroll-indicator {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  color: var(--skin-color);
+  transform: translateX(-50%) scale(1.1);
+}
+
+.scroll-indicator:hover .scroll-arrow {
+  animation: arrowBounceHover 1s ease-in-out infinite;
+}
+
+@keyframes arrowBounceHover {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+/* Enhanced tech float animations */
+@keyframes techFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(270deg);
+  }
+}
+
+.tech-float {
+  animation: techFloat 4s ease-in-out infinite;
+}
+
+/* Staggered animations for tech icons */
+.tech-1 {
+  animation-delay: 0s;
+}
+.tech-2 {
+  animation-delay: 0.3s;
+}
+.tech-3 {
+  animation-delay: 0.6s;
+}
+.tech-4 {
+  animation-delay: 0.9s;
+}
+.tech-5 {
+  animation-delay: 1.2s;
+}
+.tech-6 {
+  animation-delay: 1.5s;
+}
+
+/* Additional hover effects */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-item-inner:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-item-inner:hover {
+  border-color: var(--skin-color);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-black-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--skin-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-black-700);
+}
+
+/* Loading animations for skills */
+.skill-item .progress-in {
+  transition: width 2s ease-in-out;
+}
+
+/* Focus states for accessibility */
+.btn:focus,
+.form-control:focus,
+.portfolio-filter-btn:focus {
+  outline: 2px solid var(--skin-color);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .aside,
+  .style-switcher,
+  .lightbox,
+  .particles,
+  .tech-float,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  .main-content {
+    padding-left: 0 !important;
+  }
+
+  .section {
+    position: static !important;
+    opacity: 1 !important;
+    transform: none !important;
+    page-break-after: always;
+  }
+
+  .home {
+    page-break-after: auto;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .particle,
+  .img-background {
+    opacity: 0.3;
+  }
+
+  .tech-float {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .particle,
+  .tech-float,
+  .scroll-arrow,
+  .highlight,
+  .greeting {
+    animation: none;
+  }
+
+  .btn::before {
+    display: none;
+  }
+}

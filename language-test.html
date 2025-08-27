@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Test</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/language-toggle.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-footer {
+            background: #333;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .test-content {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+
+        /* Add CSS variables for color theme */
+        :root {
+            --bg-black-50: #e8e8e8;
+            --bg-black-100: #f0f0f0;
+            --bg-black-900: #333;
+            --text-black-700: #333;
+            --text-black-300: #666;
+            --skin-color: #ec1839;
+            --skin-color-rgb: 236, 24, 57;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test-container">
+        <h1>🌍 Language Toggle Test</h1>
+        <p>This is a test page to check if the language switching functionality works properly.</p>
+
+        <div class="debug-info">
+            <strong>Debug Info:</strong><br>
+            <span id="debug-info">Loading...</span>
+        </div>
+
+        <!-- Simulate sidebar footer where language toggle should appear -->
+        <div class="sidebar-footer">
+            <h3>Sidebar Footer (Language buttons should appear here)</h3>
+            <p>This simulates the sidebar-footer element where language toggle buttons are added.</p>
+        </div>
+
+        <!-- Test content that should be translated -->
+        <div class="test-content">
+            <h2 class="section-title"><span>Test Content</span></h2>
+            <div class="nav">
+                <a href="#home"><span>Home</span></a> |
+                <a href="#about"><span>About</span></a> |
+                <a href="#services"><span>Services</span></a> |
+                <a href="#portfolio"><span>Portfolio</span></a> |
+                <a href="#contact"><span>Contact</span></a>
+            </div>
+
+            <div class="home-info">
+                <h1 class="name-title">I'm <span class="highlight">Nguyen Van Huy</span></h1>
+                <p class="description">Test description that should be translated</p>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+
+            <div class="profile-info">
+                <h3 class="profile-name">Nguyen Van Huy</h3>
+                <p class="profile-role">Full Stack Developer</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load scripts -->
+    <script src="js/translations.js"></script>
+    <script>
+        // Debug function
+        function updateDebugInfo() {
+            const debugElement = document.getElementById('debug-info');
+            let info = `
+                📍 Translations loaded: ${typeof translations !== 'undefined'}<br>
+                📍 LanguageManager loaded: ${typeof LanguageManager !== 'undefined'}<br>
+                📍 Language toggle exists: ${document.querySelector('.language-toggle') !== null}<br>
+                📍 Sidebar footer exists: ${document.querySelector('.sidebar-footer') !== null}<br>
+                📍 Current language: ${localStorage.getItem('language') || 'not set'}<br>
+                📍 DOM ready: ${document.readyState}<br>
+            `;
+            debugElement.innerHTML = info;
+        }
+
+        // Update debug info periodically
+        setInterval(updateDebugInfo, 1000);
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOM Content Loaded');
+            updateDebugInfo();
+
+            // Try to initialize LanguageManager
+            setTimeout(() => {
+                if (typeof LanguageManager !== 'undefined') {
+                    console.log('Initializing LanguageManager...');
+                    window.languageManager = new LanguageManager();
+                    console.log('LanguageManager initialized');
+                    updateDebugInfo();
+                } else {
+                    console.error('LanguageManager not found');
+                }
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

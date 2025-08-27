@@ -1,0 +1,109 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gearGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGradient)" rx="15"/>
+  
+  <!-- Main gear -->
+  <g transform="translate(200,150)">
+    <!-- Large gear -->
+    <circle cx="0" cy="0" r="60" fill="url(#gearGradient)" opacity="0.9"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#fff" stroke-width="2" opacity="0.7"/>
+    <circle cx="0" cy="0" r="20" fill="#fff" opacity="0.9"/>
+    
+    <!-- Gear teeth -->
+    <g fill="#fff" opacity="0.8">
+      <rect x="-5" y="-65" width="10" height="10" rx="2"/>
+      <rect x="-5" y="55" width="10" height="10" rx="2"/>
+      <rect x="55" y="-5" width="10" height="10" rx="2"/>
+      <rect x="-65" y="-5" width="10" height="10" rx="2"/>
+      
+      <rect x="39" y="-42" width="8" height="8" rx="2" transform="rotate(45)"/>
+      <rect x="-47" y="-42" width="8" height="8" rx="2" transform="rotate(-45)"/>
+      <rect x="39" y="34" width="8" height="8" rx="2" transform="rotate(-45)"/>
+      <rect x="-47" y="34" width="8" height="8" rx="2" transform="rotate(45)"/>
+    </g>
+  </g>
+  
+  <!-- Small gear -->
+  <g transform="translate(120,80)">
+    <circle cx="0" cy="0" r="30" fill="#fff" opacity="0.8"/>
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#667eea" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#667eea"/>
+    
+    <!-- Small gear teeth -->
+    <g fill="#667eea" opacity="0.9">
+      <rect x="-3" y="-33" width="6" height="6" rx="1"/>
+      <rect x="-3" y="27" width="6" height="6" rx="1"/>
+      <rect x="27" y="-3" width="6" height="6" rx="1"/>
+      <rect x="-33" y="-3" width="6" height="6" rx="1"/>
+    </g>
+  </g>
+  
+  <!-- Feature icons -->
+  <!-- Chart icon -->
+  <g transform="translate(80,200)">
+    <rect x="-15" y="-15" width="30" height="30" fill="#fff" opacity="0.9" rx="5"/>
+    <g transform="scale(0.8)" fill="#667eea">
+      <rect x="-10" y="5" width="4" height="8"/>
+      <rect x="-4" y="0" width="4" height="13"/>
+      <rect x="2" y="-5" width="4" height="18"/>
+      <rect x="8" y="3" width="4" height="10"/>
+    </g>
+  </g>
+  
+  <!-- Users icon -->
+  <g transform="translate(320,200)">
+    <rect x="-15" y="-15" width="30" height="30" fill="#fff" opacity="0.9" rx="5"/>
+    <g fill="#667eea">
+      <circle cx="-5" cy="-3" r="4"/>
+      <circle cx="5" cy="-3" r="4"/>
+      <ellipse cx="-5" cy="6" rx="6" ry="4"/>
+      <ellipse cx="5" cy="6" rx="6" ry="4"/>
+    </g>
+  </g>
+  
+  <!-- Box icon -->
+  <g transform="translate(320,80)">
+    <rect x="-15" y="-15" width="30" height="30" fill="#fff" opacity="0.9" rx="5"/>
+    <g fill="#667eea" opacity="0.8">
+      <rect x="-8" y="-6" width="16" height="12" rx="2"/>
+      <rect x="-6" y="-8" width="12" height="4" rx="1"/>
+    </g>
+  </g>
+  
+  <!-- Clock icon -->
+  <g transform="translate(80,120)">
+    <rect x="-15" y="-15" width="30" height="30" fill="#fff" opacity="0.9" rx="5"/>
+    <g fill="#667eea">
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#667eea" stroke-width="2"/>
+      <line x1="0" y1="0" x2="0" y2="-5" stroke="#667eea" stroke-width="2"/>
+      <line x1="0" y1="0" x2="3" y2="0" stroke="#667eea" stroke-width="1.5"/>
+    </g>
+  </g>
+  
+  <!-- Connection lines -->
+  <g stroke="#fff" stroke-width="2" opacity="0.3" fill="none">
+    <line x1="140" y1="110" x2="170" y2="130"/>
+    <line x1="230" y1="130" x2="290" y2="110"/>
+    <line x1="170" y1="180" x2="140" y2="200"/>
+    <line x1="230" y1="180" x2="290" y2="200"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    Production Management
+  </text>
+  <text x="200" y="270" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="12" opacity="0.8">
+    ASP.NET Core • React • SQL Server
+  </text>
+</svg>

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyen Van Huy - Portfolio</title>
+    <meta name="description"
+        content="Professional portfolio of Nguyen Van Huy - Web Developer specializing in ASP.NET Core, Flutter, and modern web technologies">
+    <meta name="keywords" content="Web Developer, ASP.NET Core, Flutter, JavaScript, CSS, SQL, Portfolio">
+    <meta name="author" content="Nguyen Van Huy">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /><stop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /></linearGradient></defs><rect width='32' height='32' rx='6' fill='url(%23grad1)'/><path d='M8 12h3l3 8 3-8h3l-4.5 12h-3L8 12z' fill='white'/><circle cx='22' cy='10' r='2' fill='white'/></svg>">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><linearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /><stop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /></linearGradient></defs><rect width='180' height='180' rx='30' fill='url(%23grad2)'/><path d='M45 67.5h16.875l16.875 45 16.875-45h16.875L126.5625 135h-16.875L45 67.5z' fill='white'/><circle cx='123.75' cy='56.25' r='11.25' fill='white'/></svg>">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /><stop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /></linearGradient></defs><rect width='32' height='32' rx='6' fill='url(%23grad3)'/><path d='M8 12h3l3 8 3-8h3l-4.5 12h-3L8 12z' fill='white'/><circle cx='22' cy='10' r='2' fill='white'/></svg>">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><defs><linearGradient id='grad4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /><stop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /></linearGradient></defs><rect width='16' height='16' rx='3' fill='url(%23grad4)'/><path d='M4 6h1.5l1.5 4 1.5-4h1.5l-2.25 6h-1.5L4 6z' fill='white'/><circle cx='11' cy='5' r='1' fill='white'/></svg>">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="theme-color" content="#667eea">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/production-icon.css" />
+    <link rel="stylesheet" href="css/language-toggle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Animation Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-logo">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="loader-text">Loading Portfolio...</div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="aside">
+            <div class="logo">
+                <a href="#" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-name">Van Huy</span>
+                        <span class="logo-title">Developer</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-toggler">
+                <span></span>
+            </div>
+
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <img src="images/avatar.jpg" alt="Profile Avatar">
+                    <div class="status-indicator"></div>
+                </div>
+                <h3 class="profile-name">Nguyen Van Huy</h3>
+                <p class="profile-role">Full Stack Developer</p>
+            </div>
+
+            <ul class="nav">
+                <li><a href="#home" class="active">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                        <div class="nav-tooltip">Trang chủ</div>
+                    </a></li>
+                <li><a href="#about">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                        <div class="nav-tooltip">Về tôi</div>
+                    </a></li>
+                <li><a href="#services">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                        <div class="nav-tooltip">Dịch vụ</div>
+                    </a></li>
+                <li><a href="#portfolio">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                        <div class="nav-tooltip">Dự án</div>
+                    </a></li>
+                <li><a href="#contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                        <div class="nav-tooltip">Liên hệ</div>
+                    </a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 NguyenDev</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- ======= Home Section ======= -->
+            <section class="home section" id="home">
+                <div class="container">
+                    <!-- Floating particles background -->
+                    <div class="particles">
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="home-info padd-15" data-aos="fade-right">
+                            <div class="intro-text">
+                                <h1 class="name-title">I'm <span class="highlight">Nguyen Van Huy</span></h1>
+                                <div class="profession-container">
+                                    <span class="profession-label">I'm a </span>
+                                    <span class="typing"></span>
+                                </div>
+                            </div>
+
+                            <p class="description">
+                                🚀 Passionate full-stack developer with <strong>2+ years</strong> of experience creating
+                                amazing digital experiences. I specialize in building scalable web applications
+                                using modern technologies like <strong>ASP.NET Core</strong>, <strong>React</strong>,
+                                and <strong>Flutter</strong>.
+                            </p>
+
+                            <div class="stats-row">
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="10">10+</div>
+                                    <div class="stat-label">Projects Completed</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="2">2+</div>
+                                    <div class="stat-label">Years Experience</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="100">100%</div>
+                                    <div class="stat-label">Client Satisfaction</div>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <a href="#contact" class="btn btn-primary hire-me">
+                                    <i class="fas fa-envelope"></i>
+                                    Hire Me
+                                </a>
+                                <a href="#portfolio" class="btn btn-secondary">
+                                    <i class="fas fa-eye"></i>
+                                    View Work
+                                </a>
+                                <a href="assets/CV_NguyenVanHuy.pdf" class="btn btn-outline" download>
+                                    <i class="fas fa-download"></i>
+                                    Download CV
+                                </a>
+                            </div>
+
+                            <div class="social-links">
+                                <span class="social-label">Connect with me:</span>
+                                <div class="social-icons">
+                                    <a href="https://github.com/nguyenvanhuy" target="_blank" class="social-icon">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://linkedin.com/in/nguyenvanhuy" target="_blank" class="social-icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="mailto:huynv14.work@gmail.com" class="social-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                    <a href="tel:0392676758" class="social-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="home-img padd-15" data-aos="fade-left">
+                            <div class="img-container">
+                                <div class="img-background"></div>
+                                <img src="images/avatar.jpg" alt="Nguyen Van Huy">
+                                <div class="img-frame"></div>
+
+                                <!-- Floating tech icons -->
+                                <div class="tech-float tech-1">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="tech-float tech-2">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="tech-float tech-3">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="tech-float tech-4">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="tech-float tech-5">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="tech-float tech-6">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scroll indicator -->
+                    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+                        <span>Scroll to explore</span>
+                        <div class="scroll-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= About Section ======= -->
+            <section class="about section" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15" data-aos="fade-up">
+                            <h2>About Me</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="about-content padd-15">
+                            <div class="row">
+                                <div class="about-text padd-15" data-aos="fade-up">
+                                    <h3>I'm Huy and I'm a <span>Web Developer</span></h3>
+                                    <p>
+                                        With a strong foundation in computer science and years of hands-on experience, I
+                                        specialize in building
+                                        robust web applications using cutting-edge technologies. My expertise spans from
+                                        frontend development
+                                        with modern frameworks to backend development with ASP.NET Core. I'm passionate
+                                        about creating
+                                        seamless user experiences and writing clean, maintainable code that scales.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="personal-info padd-15" data-aos="fade-right">
+                                    <div class="row">
+                                        <div class="info-item padd-15">
+                                            <p>Birthday: <span>May 14, 2001</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Age: <span>24</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Website: <span>www.nguyenvanhuy.dev</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Email: <span>huynv14.work@gmail.com</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Degree: <span>Computer Science</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Phone: <span>0392 67 67 58</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>City: <span>Da Nang City</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Freelance: <span>Available</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="buttons padd-15">
+                                            <a href="assets/CV_NguyenVanHuy.pdf" class="btn" download>Download CV</a>
+                                            <a href="#contact" class="btn hire-me">Hire Me</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skills padd-15" data-aos="fade-left">
+                                    <div class="row">
+                                        <div class="skill-item padd-15">
+                                            <h5>ASP.NET Core</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 95%"></div>
+                                                <div class="skill-percent">95%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5>SQL Server</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 85%"></div>
+                                                <div class="skill-percent">85%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5>Flutter</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 90%"></div>
+                                                <div class="skill-percent">90%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5>React</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 90%"></div>
+                                                <div class="skill-percent">90%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5>HTML/CSS</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 85%"></div>
+                                                <div class="skill-percent">85%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="education padd-15" data-aos="fade-right">
+                                    <h3 class="title">Education</h3>
+                                    <div class="row">
+                                        <div class="timeline-box padd-15">
+                                            <div class="timeline shadow-dark">
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2019 - 2023
+                                                    </h3>
+                                                    <h4 class="timeline-title">Bachelor of Computer Science</h4>
+                                                    <p class="timeline-text">
+                                                        Graduated with honors from University of Greenwich (VietNam) Da
+                                                        Nang Campus.
+                                                        Specialized in software engineering with focus on web
+                                                        development, database design,
+                                                        and modern programming paradigms.
+                                                    </p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2023 - Present
+                                                    </h3>
+                                                    <h4 class="timeline-title">Continuous Learning & Certifications</h4>
+                                                    <p class="timeline-text">
+                                                        Actively pursuing advanced certifications in cloud computing
+                                                        (Azure),
+                                                        modern JavaScript frameworks, and mobile development. Committed
+                                                        to staying
+                                                        current with emerging technologies and best practices.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="experience padd-15" data-aos="fade-left">
+                                    <h3 class="title">Experience</h3>
+                                    <div class="row">
+                                        <div class="timeline-box padd-15">
+                                            <div class="timeline shadow-dark">
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 11/2023 - Present
+                                                    </h3>
+                                                    <h4 class="timeline-title">Full Stack Developer At Thaco Auto</h4>
+                                                    <p class="timeline-text">
+                                                        Development of enterprise web applications using ASP.NET
+                                                        Core and React.
+                                                        Responsible for architecture design, database optimization, and
+                                                        implementing
+                                                        modern CI/CD practices. Successfully delivered 3+ major
+                                                        projects.
+                                                    </p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 04/2023 - 05/2023
+                                                    </h3>
+                                                    <h4 class="timeline-title">Fresher Front-End Developer At ST
+                                                        software company</h4>
+                                                    <p class="timeline-text">
+                                                        Developed responsive web applications using modern frontend
+                                                        frameworks.
+                                                        Collaborated with design teams to implement pixel-perfect UI/UX
+                                                        designs.
+                                                        Gained experience in agile development methodologies and version
+                                                        control.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= Services Section ======= -->
+            <section class="service section" id="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15" data-aos="fade-up">
+                            <h2>Services</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="service-item padd-15" data-aos="fade-up" data-aos-delay="100">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-mobile-alt"></i>
+                                </div>
+                                <h4>Web Design</h4>
+                                <p>Creating beautiful, responsive, and user-friendly web designs that work perfectly
+                                    across all devices and browsers.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15" data-aos="fade-up" data-aos-delay="200">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-laptop-code"></i>
+                                </div>
+                                <h4>Web Development</h4>
+                                <p>Full-stack web development using modern technologies like ASP.NET Core, React, and
+                                    SQL Server for robust applications.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15" data-aos="fade-up" data-aos-delay="300">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-palette"></i>
+                                </div>
+                                <h4>UI/UX Design</h4>
+                                <p>Designing intuitive user interfaces and seamless user experiences that engage users
+                                    and drive conversions.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15" data-aos="fade-up" data-aos-delay="400">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-mobile"></i>
+                                </div>
+                                <h4>Mobile App Development</h4>
+                                <p>Cross-platform mobile app development using Flutter to create native-like experiences
+                                    for both iOS and Android.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15" data-aos="fade-up" data-aos-delay="500">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-search"></i>
+                                </div>
+                                <h4>SEO Optimization</h4>
+                                <p>Optimizing websites for search engines to improve visibility, ranking, and organic
+                                    traffic growth.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15" data-aos="fade-up" data-aos-delay="600">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-code"></i>
+                                </div>
+                                <h4>API Development</h4>
+                                <p>Building robust RESTful APIs and microservices architecture for scalable and
+                                    maintainable applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= Portfolio Section ======= -->
+            <section class="portfolio section" id="portfolio">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15" data-aos="fade-up">
+                            <h2>Portfolio</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="portfolio-heading padd-15" data-aos="fade-up">
+                            <h2>My Last Projects:</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="portfolio-filter padd-15" data-aos="fade-up">
+                            <div class="portfolio-filter-inner">
+                                <button type="button" class="portfolio-filter-btn active" data-filter="all">All</button>
+                                <button type="button" class="portfolio-filter-btn" data-filter="web-app">Web
+                                    App</button>
+                                <button type="button" class="portfolio-filter-btn" data-filter="mobile-app">Mobile
+                                    App</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row portfolio-container">
+                        <div class="portfolio-item padd-15" data-category="web-app" data-aos="fade-up">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio/production-management.svg"
+                                        alt="Production Management Software">
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-actions">
+                                            <a href="production-demo.html" class="portfolio-action"
+                                                title="Xem Demo Icon">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="#" class="portfolio-action" title="Xem Chi tiết">
+                                                <i class="fas fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>Production Management Software At Thaco Auto</h4>
+                                    <p>Hệ thống quản lý sản xuất thông minh với giao diện hiện đại</p>
+                                    <div class="portfolio-tags">
+                                        <span>ASP.NET Core</span>
+                                        <span>React</span>
+                                        <span>SQL Server</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item padd-15" data-category="web-app" data-aos="fade-up">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio/erp-system.svg" alt="ERP System At Thaco Auto">
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>ERP System At Thaco Auto</h4>
+                                    <p>Hệ thống ERP tích hợp toàn diện cho quản lý doanh nghiệp</p>
+                                    <div class="portfolio-tags">
+                                        <span>ASP.NET Core</span>
+                                        <span>React</span>
+                                        <span>SQL Server</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item padd-15" data-category="web-app" data-aos="fade-up">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio/vehicle-delivery.svg"
+                                        alt="Vehicle Delivery Software At Thaco Auto">
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-actions">
+                                            <a href="#" class="portfolio-action" title="Xem Demo">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="#" class="portfolio-action" title="Xem Chi tiết">
+                                                <i class="fas fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>Vehicle delivery software at Thaco Auto</h4>
+                                    <p>Smart vehicle delivery management system with real-time tracking and route
+                                        optimization</p>
+                                    <div class="portfolio-tags">
+                                        <span>ASP.NET Core</span>
+                                        <span>React</span>
+                                        <span>SQL Server</span>
+                                        <span>GPS Tracking</span>
+                                        <span>Real-time</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item padd-15" data-category="web-app" data-aos="fade-up">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio/portfolio-4.jpg" alt="Dashboard Analytics">
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>Dashboard Analytics</h4>
+                                    <div class="portfolio-tags">
+                                        <span>React</span>
+                                        <span>Chart.js</span>
+                                        <span>Node.js</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item padd-15" data-category="mobile-app" data-aos="fade-up">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio/portfolio-5.jpg" alt="Food Delivery App">
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>Food Delivery App</h4>
+                                    <div class="portfolio-tags">
+                                        <span>Flutter</span>
+                                        <span>Google Maps</span>
+                                        <span>Payment Gateway</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item padd-15" data-category="web-design" data-aos="fade-up">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio/portfolio-6.jpg" alt="Blog Platform">
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>Blog Platform</h4>
+                                    <div class="portfolio-tags">
+                                        <span>WordPress</span>
+                                        <span>PHP</span>
+                                        <span>MySQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= Contact Section ======= -->
+            <section class="contact section" id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15" data-aos="fade-up">
+                            <h2>Contact</h2>
+                        </div>
+                    </div>
+                    <h3 class="contact-title padd-15" data-aos="fade-up">Have You Any Questions?</h3>
+                    <h4 class="contact-sub-title padd-15" data-aos="fade-up">I'M AT YOUR SERVICE</h4>
+                    <div class="row">
+                        <div class="contact-info-item padd-15" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><i class="fa fa-phone"></i></div>
+                            <h4>Call Us On</h4>
+                            <p>0392 67 67 58</p>
+                        </div>
+                        <div class="contact-info-item padd-15" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+                            <h4>Office</h4>
+                            <p>Da Nang City, Vietnam</p>
+                        </div>
+                        <div class="contact-info-item padd-15" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon"><i class="fa fa-envelope"></i></div>
+                            <h4>Email</h4>
+                            <p>huynv14.work@gmail.com</p>
+                        </div>
+                        <div class="contact-info-item padd-15" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon"><i class="fa fa-globe-europe"></i></div>
+                            <h4>Website</h4>
+                            <p>www.nguyenvanhuy.dev</p>
+                        </div>
+                    </div>
+                    <h3 class="contact-title padd-15" data-aos="fade-up">SEND ME AN EMAIL</h3>
+                    <h4 class="contact-sub-title padd-15" data-aos="fade-up">I'M VERY RESPONSIVE TO MESSAGES</h4>
+                    <div class="row">
+                        <div class="contact-form padd-15" data-aos="fade-up">
+                            <form action="https://formsubmit.co/huynv14.work@gmail.com" method="POST"
+                                class="contact-form-inner" id="contactForm">
+                                <!-- Hidden fields for FormSubmit configuration -->
+                                <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_autoresponse"
+                                    value="Thank you for contacting me! I'll get back to you soon.">
+                                <div class="row">
+                                    <div class="form-item col-6 padd-15">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="Name"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-item col-6 padd-15">
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control" placeholder="Email"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <input type="text" name="subject" class="form-control" placeholder="Subject"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <textarea name="message" class="form-control" placeholder="Message" rows="6"
+                                                required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <button type="submit" class="btn">
+                                            <i class="fas fa-paper-plane"></i>
+                                            Send Message
+                                        </button>
+                                        <p class="form-note">
+                                            Or email me directly at:
+                                            <a href="mailto:huynv14.work@gmail.com?subject=Portfolio Contact&body=Hello Huy,%0D%0A%0D%0A"
+                                                class="email-link">huynv14.work@gmail.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for contacting me! Your message has been sent to <strong>huynv14.work@gmail.com</strong>.</p>
+            <p>I'll get back to you as soon as possible, usually within 24 hours.</p>
+            <button class="success-btn" onclick="closeSuccessModal()">
+                <i class="fas fa-times"></i>
+                Close
+            </button>
+            <div class="contact-info">
+                <p>You can also reach me directly at:</p>
+                <p><strong>huynv14.work@gmail.com</strong> | <strong>0392 67 67 58</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- ======= Style Switcher ======= -->
+    <div class="style-switcher">
+        <div class="style-switcher-toggler s-icon">
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+        <div class="day-night s-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+        <h4>Theme Colors</h4>
+        <div class="colors">
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+        </div>
+    </div>
+
+    <!-- ======= Portfolio Lightbox ======= -->
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <div class="lightbox-close">&times;</div>
+            <img src="" alt="">
+            <div class="lightbox-caption">
+                <div class="caption-text"></div>
+                <div class="caption-counter">
+                    <span class="current-img-no">1</span> / <span class="total-imgs">6</span>
+                </div>
+            </div>
+        </div>
+        <div class="lightbox-controls">
+            <div class="prev-img"><i class="fa fa-angle-left"></i></div>
+            <div class="next-img"><i class="fa fa-angle-right"></i></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/style-switcher.js"></script>
+</body>
+
+</html>

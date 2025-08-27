@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Management Software - Demo Icon</title>
+    <link rel="stylesheet" href="css/production-icon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .demo-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .demo-header h1 {
+            color: #fff;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .icon-showcase {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .demo-header h1 {
+                font-size: 2rem;
+            }
+
+            .demo-header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Về Portfolio
+    </a>
+
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>Production Management Software</h1>
+            <p>Phần mềm quản lý sản xuất toàn diện với giao diện hiện đại và tính năng thông minh</p>
+        </div>
+
+        <div class="icon-showcase">
+            <div class="production-icon">
+                <!-- Progress ring -->
+                <div class="progress-ring"></div>
+
+                <!-- Data flow lines -->
+                <div class="data-line data-line-1"></div>
+                <div class="data-line data-line-2"></div>
+                <div class="data-line data-line-3"></div>
+                <div class="data-line data-line-4"></div>
+
+                <!-- Main gear -->
+                <div class="main-gear">
+                    <div class="gear-center"></div>
+                </div>
+
+                <!-- Floating icons representing different features -->
+                <div class="floating-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-boxes"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="production-description">
+            <h3>Hệ thống quản lý sản xuất thông minh</h3>
+            <p>
+                Phần mềm quản lý sản xuất hiện đại được thiết kế để tối ưu hóa quy trình sản xuất,
+                theo dõi hiệu suất và nâng cao năng suất. Với giao diện trực quan và các tính năng
+                thông minh, hệ thống giúp doanh nghiệp quản lý toàn bộ chu trình sản xuất một cách hiệu quả.
+            </p>
+        </div>
+
+        <div class="production-features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h4>Phân tích & Báo cáo</h4>
+                <p>Theo dõi và phân tích dữ liệu sản xuất theo thời gian thực với các biểu đồ trực quan và báo cáo chi
+                    tiết.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h4>Quản lý nhân sự</h4>
+                <p>Quản lý lịch làm việc, phân công nhiệm vụ và theo dõi hiệu suất làm việc của từng nhân viên.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-boxes"></i>
+                </div>
+                <h4>Quản lý kho hàng</h4>
+                <p>Theo dõi tồn kho, quản lý nguyên vật liệu và tối ưu hóa quy trình nhập xuất kho.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h4>Lập kế hoạch sản xuất</h4>
+                <p>Lên kế hoạch sản xuất chi tiết, phân bổ tài nguyên và tối ưu hóa thời gian hoàn thành.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h4>Bảo trì thiết bị</h4>
+                <p>Quản lý bảo trì thiết bị định kỳ, theo dõi tình trạng máy móc và ngăn ngừa sự cố.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>Theo dõi hiệu suất</h4>
+                <p>Giám sát hiệu suất sản xuất, đo lường KPI và cải thiện quy trình liên tục.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+/* Language Toggle Styles */
+.language-toggle {
+  margin-bottom: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--bg-black-50);
+}
+
+.language-switcher {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 2px solid var(--bg-black-50);
+  background: transparent;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-black-700);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  justify-content: center;
+}
+
+.lang-btn:hover {
+  border-color: var(--skin-color);
+  background: var(--skin-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--skin-color-rgb), 0.3);
+}
+
+.lang-btn.active {
+  border-color: var(--skin-color);
+  background: var(--skin-color);
+  color: white;
+  box-shadow: 0 3px 10px rgba(var(--skin-color-rgb), 0.3);
+}
+
+.lang-btn .flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lang-btn .lang-text {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Animation effects */
+.lang-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.lang-btn:hover::before {
+  left: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 1199px) {
+  .language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--bg-black-100);
+    border-radius: 25px;
+    padding: 8px;
+    margin: 0;
+    border: 1px solid var(--bg-black-50);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    backdrop-filter: blur(10px);
+  }
+
+  .language-switcher {
+    gap: 4px;
+  }
+
+  .lang-btn {
+    padding: 6px 8px;
+    min-width: 45px;
+    font-size: 11px;
+  }
+
+  .lang-btn .flag {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .language-toggle {
+    top: 15px;
+    right: 60px; /* Make room for nav-toggler */
+  }
+
+  .lang-btn {
+    padding: 5px 6px;
+    min-width: 40px;
+    font-size: 10px;
+  }
+
+  .lang-btn .flag {
+    font-size: 12px;
+  }
+}
+
+/* Dark mode adjustments */
+.dark .lang-btn {
+  border-color: var(--bg-black-50);
+  color: var(--text-black-300);
+}
+
+.dark .lang-btn:hover {
+  color: white;
+}
+
+.dark .language-toggle {
+  border-color: var(--bg-black-50);
+}
+
+/* Smooth transitions for language switching */
+.language-transition {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.language-transition.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.language-transition.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading state */
+.lang-btn.loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.lang-btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tooltip for language buttons */
+.lang-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-black-900);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.lang-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  bottom: -30px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .lang-btn {
+    border-width: 3px;
+  }
+
+  .lang-btn.active {
+    box-shadow: 0 0 0 3px var(--skin-color);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .lang-btn {
+    transition: none;
+  }
+
+  .lang-btn::before {
+    display: none;
+  }
+
+  .language-transition {
+    transition: none;
+  }
+}

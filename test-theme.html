@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .color-demo {
+            width: 200px;
+            height: 50px;
+            background: var(--skin-color, #ec1829);
+            border-radius: 25px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .test-buttons {
+            margin: 20px 0;
+        }
+
+        .test-btn {
+            background: var(--skin-color, #ec1829);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+    </style>
+    <link id="color-link" rel="stylesheet" href="css/color-1.css">
+</head>
+
+<body>
+    <div class="test-container">
+        <h1>🎨 Theme Switcher Test</h1>
+
+        <div class="color-demo">
+            Current Theme Color
+        </div>
+
+        <div class="test-buttons">
+            <h3>Test Color Themes:</h3>
+            <button class="test-btn" onclick="testColor('color-1')">Color 1 (Red)</button>
+            <button class="test-btn" onclick="testColor('color-2')">Color 2 (Orange)</button>
+            <button class="test-btn" onclick="testColor('color-3')">Color 3 (Green)</button>
+            <button class="test-btn" onclick="testColor('color-4')">Color 4 (Blue)</button>
+            <button class="test-btn" onclick="testColor('color-5')">Color 5 (Pink)</button>
+        </div>
+
+        <div class="debug-info" id="debug-info">
+            <h4>Debug Info:</h4>
+            <div id="debug-content">Loading...</div>
+        </div>
+
+        <div>
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Click the color buttons above to test theme switching</li>
+                <li>Check if the color demo box changes color</li>
+                <li>Look at debug info for any errors</li>
+                <li>If working, go back to main portfolio and test</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html"
+                style="background: var(--skin-color, #ec1829); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">←
+                Back to Portfolio</a>
+        </div>
+    </div>
+
+    <script>
+        function testColor(colorName) {
+            const colorLink = document.getElementById('color-link');
+            colorLink.href = `css/${colorName}.css`;
+
+            updateDebugInfo(`Theme changed to: ${colorName}`);
+
+            // Force reload of CSS
+            setTimeout(() => {
+                const currentColor = getComputedStyle(document.documentElement).getPropertyValue('--skin-color');
+                updateDebugInfo(`Current CSS variable value: ${currentColor.trim() || 'Not found'}`);
+            }, 100);
+        }
+
+        function updateDebugInfo(message) {
+            const debugContent = document.getElementById('debug-content');
+            const timestamp = new Date().toLocaleTimeString();
+            debugContent.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+        }
+
+        // Check initial state
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDebugInfo('Page loaded');
+            updateDebugInfo('Testing CSS files existence...');
+
+            const colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5'];
+            colors.forEach(color => {
+                fetch(`css/${color}.css`)
+                    .then(response => {
+                        if (response.ok) {
+                            updateDebugInfo(`✅ ${color}.css found`);
+                        } else {
+                            updateDebugInfo(`❌ ${color}.css not found`);
+                        }
+                    })
+                    .catch(err => {
+                        updateDebugInfo(`❌ Error loading ${color}.css: ${err.message}`);
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
