@@ -143,6 +143,18 @@ const translations = {
                 {
                     title: "ERP System At Thaco Auto",
                     description: "Comprehensive ERP system for enterprise management"
+                },
+                {
+                    title: "Vehicle delivery software at Thaco Auto",
+                    description: "Smart vehicle delivery management system with real-time tracking and route optimization"
+                },
+                {
+                    title: "Vehicle inventory management software at Thaco Auto",
+                    description: "Vehicle inventory management system with real-time tracking, data analytics and automated reporting"
+                },
+                {
+                    title: "Production Management Application",
+                    description: "Mobile production management app with real-time dashboard monitoring and smart reporting"
                 }
             ]
         },
@@ -327,6 +339,18 @@ const translations = {
                 {
                     title: "Hệ thống ERP tại Thaco Auto",
                     description: "Hệ thống ERP tích hợp toàn diện cho quản lý doanh nghiệp"
+                },
+                {
+                    title: "Phần mềm giao hàng xe tại Thaco Auto",
+                    description: "Hệ thống quản lý giao hàng xe thông minh với theo dõi thời gian thực và tối ưu hóa tuyến đường"
+                },
+                {
+                    title: "Phần mềm quản lý tồn kho xe tại Thaco Auto",
+                    description: "Hệ thống quản lý tồn kho xe với theo dõi real-time, phân tích dữ liệu và báo cáo tự động"
+                },
+                {
+                    title: "Ứng dụng quản lý sản xuất",
+                    description: "Ứng dụng di động quản lý sản xuất với dashboard theo dõi realtime và báo cáo thông minh"
                 }
             ]
         },
@@ -385,6 +409,7 @@ class LanguageManager {
     createLanguageToggle() {
         // Check if language toggle already exists
         if (document.querySelector('.language-toggle')) {
+            console.log('Language toggle already exists');
             return;
         }
 
@@ -403,26 +428,51 @@ class LanguageManager {
             </div>
         `;
 
-        // Add to sidebar footer
+        // Try to add to sidebar footer first
         const sidebarFooter = document.querySelector('.sidebar-footer');
         if (sidebarFooter) {
             sidebarFooter.insertBefore(languageToggle, sidebarFooter.firstChild);
+            console.log('Language toggle added to sidebar footer');
+        } else {
+            // Fallback: add to body as fixed element
+            languageToggle.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                background: var(--bg-black-100);
+                border: 1px solid var(--bg-black-50);
+                border-radius: 25px;
+                padding: 8px;
+                box-shadow: 0 5px 15px var(--shadow-color);
+            `;
+            document.body.appendChild(languageToggle);
+            console.log('Language toggle added to body as fallback');
         }
     }
 
     setupEventListeners() {
+        // Use event delegation for better performance and reliability
         document.addEventListener('click', (e) => {
-            if (e.target.closest('.lang-btn')) {
-                const langBtn = e.target.closest('.lang-btn');
+            const langBtn = e.target.closest('.lang-btn');
+            if (langBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+
                 const newLang = langBtn.dataset.lang;
-                if (newLang !== this.currentLanguage) {
+                console.log('Language button clicked:', newLang);
+
+                if (newLang && newLang !== this.currentLanguage) {
                     this.setLanguage(newLang);
                 }
             }
         });
+
+        console.log('Language event listeners set up');
     }
 
     setLanguage(lang) {
+        console.log('Setting language to:', lang);
         this.currentLanguage = lang;
         localStorage.setItem('language', lang);
 
@@ -440,8 +490,12 @@ class LanguageManager {
         // Update typing animation if it exists
         if (window.typingAnimation) {
             window.typingAnimation.destroy();
-            this.initTypingAnimation();
+            setTimeout(() => {
+                this.initTypingAnimation();
+            }, 100);
         }
+
+        console.log('Language switched to:', lang);
     }
 
     updateContent() {
@@ -756,7 +810,17 @@ class LanguageManager {
 
 // Initialize language manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.languageManager = new LanguageManager();
+    console.log('Initializing Language Manager...');
+
+    // Small delay to ensure all DOM elements are loaded
+    setTimeout(() => {
+        try {
+            window.languageManager = new LanguageManager();
+            console.log('Language Manager initialized successfully');
+        } catch (error) {
+            console.error('Error initializing Language Manager:', error);
+        }
+    }, 100);
 });
 
 // Export for use in other scripts

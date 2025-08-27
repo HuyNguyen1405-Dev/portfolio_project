@@ -2225,6 +2225,13 @@ ul {
   color: var(--text-black-700);
   line-height: 1.6;
   margin-bottom: 15px;
+  min-height: 3.2em; /* Đảm bảo chiều cao tối thiểu cho 2 dòng */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Giới hạn tối đa 3 dòng */
+  line-clamp: 3; /* Standard property */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Portfolio Container - Equal Height Cards */
@@ -2255,6 +2262,15 @@ ul {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 18px;
+  color: var(--text-black-900);
+  font-weight: 700;
+  margin-bottom: 10px;
+  min-height: 2.4em; /* Đảm bảo chiều cao tối thiểu cho tiêu đề */
+  line-height: 1.2;
 }
 
 .portfolio .portfolio-item .portfolio-tags {

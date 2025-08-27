@@ -510,33 +510,8 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 
 /* ============================= Language Manager Initialization ===================== */
-// Initialize language manager when DOM is loaded
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM loaded, initializing language manager...');
-
-    // Wait a bit to ensure translations.js is loaded
-    setTimeout(() => {
-        if (typeof LanguageManager !== 'undefined') {
-            window.languageManager = new LanguageManager();
-            console.log('Language Manager initialized successfully');
-
-            // Force create language toggle for debugging
-            setTimeout(() => {
-                const existingToggle = document.querySelector('.language-toggle');
-                if (!existingToggle) {
-                    console.log('Language toggle not found, creating manually...');
-                    createLanguageToggleManually();
-                } else {
-                    console.log('Language toggle found:', existingToggle);
-                }
-            }, 500);
-        } else {
-            console.error('LanguageManager not found. Make sure translations.js is loaded.');
-            // Create fallback language toggle
-            createLanguageToggleManually();
-        }
-    }, 100);
-});
+// Language manager is initialized in translations.js
+// This is just a fallback check
 
 // Manual creation of language toggle for debugging
 function createLanguageToggleManually() {

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Test</title>
+    <link rel="stylesheet" href="css/language-toggle.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .test-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bff;
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 10px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test-content">
+        <div class="debug-info">
+            <h3>Debug Information</h3>
+            <p>Current Language: <span id="current-lang">Loading...</span></p>
+            <p>Language Manager Status: <span id="lang-manager-status">Loading...</span></p>
+            <p>Last Update: <span id="last-update">Never</span></p>
+        </div>
+
+        <div class="section">
+            <h2 data-translate="nav.home">Home</h2>
+            <p data-translate="home.description">🚀 Passionate full-stack developer with <strong>2+ years</strong> of
+                experience creating amazing digital experiences. I specialize in building scalable web applications
+                using modern technologies like <strong>ASP.NET Core</strong>, <strong>React</strong>, and
+                <strong>Flutter</strong>.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-translate="about.title">About Me</h2>
+            <p data-translate="about.description">With a strong foundation in computer science and years of hands-on
+                experience, I specialize in building robust web applications using cutting-edge technologies. My
+                expertise spans from frontend development with modern frameworks to backend development with ASP.NET
+                Core. I'm passionate about creating seamless user experiences and writing clean, maintainable code that
+                scales.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-translate="services.title">Services</h2>
+            <div class="service-item">
+                <h4 data-translate="services.items.0.title">Web Design</h4>
+                <p data-translate="services.items.0.description">Creating beautiful, responsive, and user-friendly web
+                    designs that work perfectly across all devices and browsers.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 data-translate="contact.title">Contact</h2>
+            <p data-translate="contact.subtitle">Have You Any Questions?</p>
+        </div>
+    </div>
+
+    <script>
+        // Debug function
+        function updateDebugInfo() {
+            const currentLang = localStorage.getItem('language') || 'en';
+            const langManagerExists = typeof window.languageManager !== 'undefined';
+
+            document.getElementById('current-lang').textContent = currentLang;
+            document.getElementById('lang-manager-status').textContent = langManagerExists ? 'Loaded' : 'Not Found';
+            document.getElementById('last-update').textContent = new Date().toLocaleTimeString();
+        }
+
+        // Update debug info periodically
+        setInterval(updateDebugInfo, 1000);
+
+        // Initial update
+        setTimeout(updateDebugInfo, 100);
+    </script>
+
+    <script src="js/translations.js"></script>
+</body>
+
+</html>
